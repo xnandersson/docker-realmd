@@ -13,4 +13,12 @@ Quick Howto:
  * Run it (./realmd.run). Your client is automatically provisioned.
  * Thats it. Nothing more to it.
 
+Quirks:
+
+ * The bashrc script is needed, because dbus-daemon needs to be started in order 
+   for realmd to be able to do it's job. There is a directory /var/run/dbus created 
+   in the Dockerfile for the very same reason.
+ * Packagekit is needed due to a bug in aptdaemon in Ubuntu. Without it your packages
+   won't resolve correctly.
+
 [1] https://github.com/xnandersson/docker-dc
