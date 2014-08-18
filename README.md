@@ -6,10 +6,10 @@ Prerequisites:
 
 Quick Howto:
 
- * Set up a docker-dc as per [1], and make a note of your ip address.
+ * Set up a docker-dc as per [1], and make a note of your ip address. (sudo docker inspect dc | grep IPAddress)
  * Modify the contents of krb5-config.debconf to reflect your domain. Defaults are for docker-dc
  * Build the image. (./realmd.build)
  * Modify the realmd.run so --dns= reflect the ip to your AD-server.
- * Run it (./realmd.run). Your mashine is automatically provisioned.
+ * Run it (./realmd.run). Your client is automatically provisioned.
 
 [1] https://github.com/xnandersson/docker-dc
