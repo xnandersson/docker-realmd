@@ -11,5 +11,6 @@ Quick Howto:
  * Build the image. (./realmd.build)
  * Modify the realmd.run so --dns= reflect the ip to your AD-server.
  * Run it (./realmd.run). Your client is automatically provisioned.
+ * Thats it. Nothing more to it.
 
 [1] https://github.com/xnandersson/docker-dc
