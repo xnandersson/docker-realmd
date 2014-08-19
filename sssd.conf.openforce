@@ -1,16 +1,22 @@
 [sssd]
 domains = openforce.org
 config_file_version = 2
-services = nss, pam
+services = nss, pam, ssh
 reconnection_retries = 7
+debug_level = 5
+
+[ssh]
+debug_level = 5
 
 [pam]
 offline_credentials_expiration = 60
 pam_pwd_expiration_warning = 14
+debug_level = 5
 
 [nss]
 filter_groups = root
 filter_users = root
+debug_level = 5
 
 [domain/openforce.org]
 id_provider = ad
@@ -25,3 +31,4 @@ lookup_family_order = ipv4_only
 cache_credentials = True
 fallback_homedir = /home/%u
 create_homedir = True
+debug_level = 5
