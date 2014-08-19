@@ -1,0 +1,27 @@
+[sssd]
+domains = openforce.org
+config_file_version = 2
+services = nss, pam
+reconnection_retries = 7
+
+[pam]
+offline_credentials_expiration = 60
+pam_pwd_expiration_warning = 14
+
+[nss]
+filter_groups = root
+filter_users = root
+
+[domain/openforce.org]
+id_provider = ad
+auth_provider = ad
+chpass_provider = ad
+access_provider = permit
+ignore_group_members = true
+enumerature = false
+dyndns_update = false
+use_fully_qualified_names = False
+lookup_family_order = ipv4_only
+cache_credentials = True
+fallback_homedir = /home/%u
+create_homedir = True
