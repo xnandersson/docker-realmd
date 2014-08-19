@@ -1,2 +1,3 @@
 #!/bin/bash
-sudo docker run -t -i --hostname realmd$$ --name realmd$$ --dns=172.17.0.2 xnandersson/realmd:trusty /bin/bash
+DC_IPADDR=$(sudo docker inspect dc | grep IPAddr | egrep -o --regexp='[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}.[0-9]{1,3}')
+sudo docker run -t -i --hostname realmd$$ --name realmd$$ --dns=$DC_IPADDR xnandersson/realmd:trusty /bin/bash
