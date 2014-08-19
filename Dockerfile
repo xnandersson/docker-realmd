@@ -10,6 +10,5 @@ RUN mkdir /var/run/dbus
 RUN mkdir /var/run/sshd
 ADD sssd.conf.openforce /etc/sssd/sssd.conf.openforce
 COPY pam.d/ /etc/pam.d
-ADD bashrc /.bashrc
 ADD realmd.fg /usr/local/bin/realmd.fg
 CMD /usr/local/bin/realmd.fg

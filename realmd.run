@@ -1,3 +1,4 @@
 #!/bin/bash
 DC_IPADDR=$(sudo docker inspect dc | grep IPAddr | egrep -o --regexp='[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}.[0-9]{1,3}')
+echo $DC_IPADDR
 sudo docker run -d --hostname realmd$$ --name realmd$$ --dns=$DC_IPADDR xnandersson/realmd:trusty /usr/local/bin/realmd.fg

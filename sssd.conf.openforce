@@ -31,4 +31,5 @@ lookup_family_order = ipv4_only
 cache_credentials = True
 fallback_homedir = /home/%u
 create_homedir = True
+override_shell = /bin/bash
 debug_level = 5
