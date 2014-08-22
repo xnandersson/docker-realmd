@@ -1,4 +1,12 @@
 #!/usr/bin/python
+# 
+# time_ssh_login.py
+#
+#  Measures how long it takes to login with ssh.
+#
+# Author: Niklas Andersson <niklas dot andersson at openforce dot se>
+# Licence: Two clause BSD License
+#
 
 import pexpect
 import sys
