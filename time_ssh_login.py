@@ -9,6 +9,7 @@ EXPECT_YESNO    = "\(yes/no\)\? "
 def connect(ipaddr,user,password):
 	print("Connecting to %s" % ipaddr)
 	child = pexpect.spawn('ssh %s@%s' % (user,ipaddr))
+	child.logfile_read = sys.stdout
 	index = child.expect(['password: ',EXPECT_YESNO])
 	if index == 1:
 		print("Automatically accepting hostkey.")
