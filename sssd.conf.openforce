@@ -1,11 +1,14 @@
 [sssd]
 domains = openforce.org
 config_file_version = 2
-services = nss, pam, ssh
+services = nss, pam, ssh, sudo
 reconnection_retries = 7
 debug_level = 5
 
 [ssh]
+debug_level = 5
+
+[sudo]
 debug_level = 5
 
 [pam]
@@ -23,6 +26,7 @@ id_provider = ad
 auth_provider = ad
 chpass_provider = ad
 access_provider = permit
+sudo_provider = ldap
 ignore_group_members = true
 enumerature = false
 dyndns_update = false
@@ -32,4 +36,11 @@ cache_credentials = True
 fallback_homedir = /home/%u
 create_homedir = True
 override_shell = /bin/bash
+#
+# Sudo
+#
+ldap_uri = ldap://openldap
+ldap_sudo_search_base = ou=SUDOers,dc=openforce,dc=org
+ldap_default_bind_dn = cn=admin,dc=openforce,dc=org
+ldap_default_authtok = Secret007!
 debug_level = 5
